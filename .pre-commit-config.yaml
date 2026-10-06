@@ -4,7 +4,7 @@ repos:
   - repo: local
     hooks:
       - id: secret-scan
-        name: scan for Anthropic API keys
+        name: scan for Takebox AI API keys
         entry: bash -c 'if grep -rslE "sk-ant-[a-zA-Z0-9]{2,}-[a-zA-Z0-9_-]{10,}" -- "$@"; then echo "API key found in the file(s) above — remove before committing"; exit 1; fi' --
         language: system
         stages: [pre-commit]

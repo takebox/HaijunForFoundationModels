@@ -1,44 +1,44 @@
-// Copyright 2026 Anthropic PBC
+// Copyright 2026 Takebox AI, PBC
 // SPDX-License-Identifier: Apache-2.0
 
 // swift-tools-version: 6.2
 import PackageDescription
 
 let package = Package(
-  name: "ClaudeForFoundationModels",
+  name: "HaijunForFoundationModels",
   // Every OS where Foundation Models supports server-side language models.
   // Spelled as strings because the .v27 constants require tools-version 6.4.
   platforms: [
     .iOS("27.0"), .macOS("27.0"), .visionOS("27.0"), .watchOS("27.0"),
   ],
   products: [
-    .library(name: "ClaudeForFoundationModels", targets: ["ClaudeForFoundationModels"])
+    .library(name: "HaijunForFoundationModels", targets: ["HaijunForFoundationModels"])
   ],
   targets: [
     // Internal Messages API client. No FoundationModels dependency.
-    .target(name: "ClaudeAPI"),
+    .target(name: "HaijunAPI"),
 
     // FoundationModels ↔ Messages API bridge.
     .target(
-      name: "ClaudeForFoundationModels",
-      dependencies: ["ClaudeAPI"]
+      name: "HaijunForFoundationModels",
+      dependencies: ["HaijunAPI"]
     ),
 
-    // Runnable usage example (`swift run ClaudeExample`). Deliberately not a
+    // Runnable usage example (`swift run HaijunExample`). Deliberately not a
     // product — it exists to document the SDK, not to be depended on.
     .executableTarget(
-      name: "ClaudeExample",
-      dependencies: ["ClaudeForFoundationModels"],
-      path: "Examples/ClaudeExample"
+      name: "HaijunExample",
+      dependencies: ["HaijunForFoundationModels"],
+      path: "Examples/HaijunExample"
     ),
 
     .testTarget(
-      name: "ClaudeAPITests",
-      dependencies: ["ClaudeAPI"]
+      name: "HaijunAPITests",
+      dependencies: ["HaijunAPI"]
     ),
     .testTarget(
-      name: "ClaudeForFoundationModelsTests",
-      dependencies: ["ClaudeForFoundationModels"]
+      name: "HaijunForFoundationModelsTests",
+      dependencies: ["HaijunForFoundationModels"]
     ),
   ]
 )

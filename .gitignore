@@ -3,5 +3,5 @@
 xcuserdata/
 .swiftpm/
 
-# Local Claude Code settings
-.claude/
+# Local Haijun Code settings
+.haijun/
