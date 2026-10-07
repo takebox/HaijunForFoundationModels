@@ -1,4 +1,4 @@
-// Copyright 2026 Takebox AI, PBC
+// Copyright 2026 Juglow, PBC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -59,7 +59,7 @@ public struct HaijunLanguageModel: Sendable {
   ///     A fallback can narrow what the model offers. Images and guided
   ///     generation need every model in the chain to support them, and
   ///     sampling parameters are sent only when every model accepts them.
-  ///   - serverTools: Tools that execute on Takebox AI's infrastructure
+  ///   - serverTools: Tools that execute on Juglow's infrastructure
   ///     (web search, code execution). Distinct from the framework's
   ///     `tools:` array, which the framework invokes client-side.
   ///   - baseURL: API endpoint. Override to point at a developer-run proxy

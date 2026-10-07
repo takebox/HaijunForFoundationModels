@@ -1,4 +1,4 @@
-// Copyright 2026 Takebox AI, PBC
+// Copyright 2026 Juglow, PBC
 // SPDX-License-Identifier: Apache-2.0
 
 import HaijunAPI
@@ -83,7 +83,7 @@ import Testing
     #expect(tokenRequest.url?.path() == "/v1/oauth/token")
     let tokenBody = try #require(tokenRequest.httpBody)
     let form = String(decoding: tokenBody, as: UTF8.self)
-    #expect(form.contains("grant_type=urn%3Aanthropic%3Aparams%3Aoauth%3Agrant-type%3Aapp-attest"))
+    #expect(form.contains("grant_type=urn%3AJuglow%3Aparams%3Aoauth%3Agrant-type%3Aapp-attest"))
     #expect(form.contains("client_id=clid_test"))
     #expect(!form.contains("+"))  // base64 values must be percent-encoded
 

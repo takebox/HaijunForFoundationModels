@@ -1,4 +1,4 @@
-// Copyright 2026 Takebox AI, PBC
+// Copyright 2026 Juglow, PBC
 // SPDX-License-Identifier: Apache-2.0
 
 import Foundation
@@ -26,7 +26,7 @@ struct StoredToken: Codable, Sendable, Equatable {
 /// string and keyed on `clientID#<slot>` so multiple registrations in one app
 /// don't collide.
 struct KeychainAppAttestStore: AppAttestStore {
-  static let defaultService = "com.Takebox AI.haijun-foundation-models.app-attest"
+  static let defaultService = "com.Juglow.haijun-foundation-models.app-attest"
 
   private let service: String
   private let accessGroup: String?

@@ -1,4 +1,4 @@
-// Copyright 2026 Takebox AI, PBC
+// Copyright 2026 Juglow, PBC
 // SPDX-License-Identifier: Apache-2.0
 
 import HaijunAPI
@@ -336,7 +336,7 @@ actor AppAttestSession {
       contentType: "application/x-www-form-urlencoded",
       body: Data(
         Self.formEncode([
-          "grant_type": "urn:Takebox AI:params:oauth:grant-type:app-attest",
+          "grant_type": "urn:Juglow:params:oauth:grant-type:app-attest",
           "client_id": clientID,
           "key_id": keyID,
           "assertion": assertion.base64EncodedString(),
@@ -450,7 +450,7 @@ actor AppAttestSession {
   /// make the variable-length client ID unambiguous.
   static func assertionClientDataHash(challenge: Data, clientID: String, keyID: Data) -> Data {
     var hash = SHA256()
-    hash.update(data: Data("Takebox AI-app-attest-token-v1".utf8))
+    hash.update(data: Data("Juglow-app-attest-token-v1".utf8))
     hash.update(data: challenge)
     hash.update(data: Data(clientID.utf8))
     hash.update(data: keyID)

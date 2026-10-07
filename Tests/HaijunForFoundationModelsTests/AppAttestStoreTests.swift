@@ -1,4 +1,4 @@
-// Copyright 2026 Takebox AI, PBC
+// Copyright 2026 Juglow, PBC
 // SPDX-License-Identifier: Apache-2.0
 
 import Foundation
@@ -11,7 +11,7 @@ import Testing
 /// `errSecMissingEntitlement` (-34018) there. The probe gates the suite so
 /// it runs only where it can (a host app, a signed test bundle).
 private let keychainAvailable: Bool = {
-  let probe = KeychainAppAttestStore(service: "com.Takebox AI.cffm.tests.probe")
+  let probe = KeychainAppAttestStore(service: "com.Juglow.cffm.tests.probe")
   do {
     try probe.setKeyID("probe", for: "probe")
     try probe.clear(for: "probe")
@@ -27,7 +27,7 @@ struct AppAttestStoreTests {
   /// touching the production namespace and makes leftovers from a crashed
   /// run harmless.
   private let store = KeychainAppAttestStore(
-    service: "com.Takebox AI.haijun-foundation-models.tests.\(UUID().uuidString)"
+    service: "com.Juglow.haijun-foundation-models.tests.\(UUID().uuidString)"
   )
   private let clientID = "clid_test"
 

@@ -1,4 +1,4 @@
-// Copyright 2026 Takebox AI, PBC
+// Copyright 2026 Juglow, PBC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ public enum AuthMode: Hashable, Sendable {
   /// These headers are fixed at construction. Per-request values (a rotating
   /// user token) belong in a future provider-based mode, not here.
   case proxied(headers: [String: String])
-  /// App Attest. Register the app in the Takebox AI console to obtain a
+  /// App Attest. Register the app in the Juglow console to obtain a
   /// `clientID`; each install then proves it's a genuine, unmodified copy
   /// via the Secure Enclave, and usage is billed to the developer's
   /// workspace. This works without a developer backend, a browser flow,

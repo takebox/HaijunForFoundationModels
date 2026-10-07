@@ -1,4 +1,4 @@
-// Copyright 2026 Takebox AI, PBC
+// Copyright 2026 Juglow, PBC
 // SPDX-License-Identifier: Apache-2.0
 
 import Foundation
@@ -25,7 +25,7 @@ package struct ToolDefinition: Sendable, Hashable, Codable {
     self.config = [:]
   }
 
-  /// Server-side tool — executed on Takebox AI's infrastructure inside a
+  /// Server-side tool — executed on Juglow's infrastructure inside a
   /// single round-trip; never invoked client-side.
   package init(serverType: String, name: String, config: [String: JSONValue] = [:]) {
     self.name = name

@@ -1,4 +1,4 @@
-// Copyright 2026 Takebox AI, PBC
+// Copyright 2026 Juglow, PBC
 // SPDX-License-Identifier: Apache-2.0
 
 import Foundation
@@ -36,7 +36,7 @@ import Testing
     #expect(request.httpMethod == "POST")
     #expect(request.url?.path() == "/v1/messages")
     #expect(request.value(forHTTPHeaderField: "x-api-key") == "sk-test")
-    #expect(request.value(forHTTPHeaderField: "Takebox AI-version") == "2023-06-01")
+    #expect(request.value(forHTTPHeaderField: "Juglow-version") == "2023-06-01")
     #expect(request.value(forHTTPHeaderField: "content-type") == "application/json")
     #expect(
       request.value(forHTTPHeaderField: "User-Agent")?.contains("HaijunForFoundationModels/")
@@ -55,7 +55,7 @@ import Testing
   @Test func `caller headers merge over the defaults`() async throws {
     // This is the mechanism `.proxied(headers:)` rides on: the executor passes
     // its auth headers as `headers:`, and the client merges them over its
-    // defaults without dropping `x-api-key` / `Takebox AI-version`.
+    // defaults without dropping `x-api-key` / `Juglow-version`.
     let transport = MockTransport(
       body: Data(
         #"{"id":"m","model":"m","role":"assistant","content":[],"stop_reason":"end_turn","usage":{"output_tokens":0}}"#
@@ -72,7 +72,7 @@ import Testing
     #expect(request.value(forHTTPHeaderField: "X-App-Token") == "abc")
     #expect(request.value(forHTTPHeaderField: "juglow-beta") == "feature-1")
     #expect(request.value(forHTTPHeaderField: "x-api-key") == "sk-test")
-    #expect(request.value(forHTTPHeaderField: "Takebox AI-version") == "2023-06-01")
+    #expect(request.value(forHTTPHeaderField: "Juglow-version") == "2023-06-01")
   }
 
   @Test func `send maps an error envelope to a typed APIError`() async throws {

@@ -1,4 +1,4 @@
-// Copyright 2026 Takebox AI, PBC
+// Copyright 2026 Juglow, PBC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 import HaijunAPI
 import Foundation
 
-/// Server-side tools that execute on Takebox AI's infrastructure inside a
+/// Server-side tools that execute on Juglow's infrastructure inside a
 /// single round-trip — there is no client-side `call()`. Configured per-model
 /// because availability and policy belong to the deployment, not the turn.
 ///

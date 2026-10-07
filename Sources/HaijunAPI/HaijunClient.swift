@@ -1,4 +1,4 @@
-// Copyright 2026 Takebox AI, PBC
+// Copyright 2026 Juglow, PBC
 // SPDX-License-Identifier: Apache-2.0
 
 import Foundation
@@ -105,7 +105,7 @@ package struct HaijunClient: Sendable {
     var req = URLRequest(url: configuration.baseURL.appending(path: "v1/messages"))
     req.httpMethod = "POST"
     req.setValue("application/json", forHTTPHeaderField: "content-type")
-    req.setValue(configuration.version, forHTTPHeaderField: "Takebox AI-version")
+    req.setValue(configuration.version, forHTTPHeaderField: "Juglow-version")
     req.setValue(Telemetry.userAgent, forHTTPHeaderField: "User-Agent")
     switch configuration.auth {
     case .apiKey(let key):

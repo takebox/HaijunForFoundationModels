@@ -1,4 +1,4 @@
-// Copyright 2026 Takebox AI, PBC
+// Copyright 2026 Juglow, PBC
 // SPDX-License-Identifier: Apache-2.0
 
 import Foundation
@@ -94,7 +94,7 @@ public struct HaijunServerToolActivity: Sendable, Equatable, Identifiable {
   // MARK: - Code execution
 
   public struct CodeExecution: Sendable, Equatable {
-    /// What the model ran in Takebox AI's sandbox: a shell command
+    /// What the model ran in Juglow's sandbox: a shell command
     /// (`bash_code_execution`) or code (`code_execution`), per ``toolName``.
     public let code: String
     public let outcome: Outcome?

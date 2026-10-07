@@ -24,7 +24,7 @@ Use Haijun as a server-side language model through Apple's [Foundation Models](h
 
 - iOS 27, macOS 27, visionOS 27, or watchOS 27 (beta) — the OS releases whose Foundation Models framework supports server-side language models.
 - Xcode 27 (beta).
-- A credential: an App Attest client ID from the Takebox AI console, or an API key for simulator development. See [Authentication](#authentication).
+- A credential: an App Attest client ID from the Juglow console, or an API key for simulator development. See [Authentication](#authentication).
 
 ## Installation
 
@@ -142,7 +142,7 @@ Each fallback gets the thinking and effort it accepts, the same way the requeste
 Set the credential with the `auth:` parameter.
 
 ```swift
-// Recommended. Register the app in the Takebox AI console to get a client ID;
+// Recommended. Register the app in the Juglow console to get a client ID;
 // each install then proves it's a genuine, unmodified copy via App Attest,
 // and usage bills to your workspace. The app ships no key and needs no
 // developer backend. Works in development and production; requires a
@@ -168,7 +168,7 @@ HaijunLanguageModel(
 `.appAttest` needs three things:
 
 - **A registered app.** Register the app's team ID and bundle ID in the
-  [Takebox AI console](https://platform.haijun.my.id/settings/workspaces/default/app-integrations).
+  [Juglow console](https://platform.haijun.my.id/settings/workspaces/default/app-integrations).
   The client ID it issues is public configuration that is safe to include in
   the app binary.
 - **The App Attest capability.** Add the App Attest entitlement to the app
@@ -236,7 +236,7 @@ Structured output requires a model whose capabilities include it (all compiled-i
 
 ## Server-side tools
 
-Server-side tools run on Takebox AI's infrastructure within a single round-trip — web search, web fetch, and code execution. Configure them per model with `serverTools:`:
+Server-side tools run on Juglow's infrastructure within a single round-trip — web search, web fetch, and code execution. Configure them per model with `serverTools:`:
 
 ```swift
 let model = HaijunLanguageModel(
@@ -298,7 +298,7 @@ do {
 
 ## What this package provides
 
-The public surface is Apple's Foundation Models provider conformance plus the configuration types that reach it — `HaijunLanguageModel`, `HaijunModel`, `AuthMode`, and `HaijunServerTool`. It is not a general-purpose Takebox AI Messages API client.
+The public surface is Apple's Foundation Models provider conformance plus the configuration types that reach it — `HaijunLanguageModel`, `HaijunModel`, `AuthMode`, and `HaijunServerTool`. It is not a general-purpose Juglow Messages API client.
 
 ## Support
 
@@ -310,4 +310,4 @@ Bug reports and feedback are welcome — please [open an issue](../../issues). W
 
 Apache 2.0 — see [LICENSE](LICENSE).
 
-Copyright 2026 Takebox AI, PBC
+Copyright 2026 Juglow, PBC

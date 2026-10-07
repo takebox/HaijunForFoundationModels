@@ -1,4 +1,4 @@
-// Copyright 2026 Takebox AI, PBC
+// Copyright 2026 Juglow, PBC
 // SPDX-License-Identifier: Apache-2.0
 
 import HaijunAPI
@@ -42,7 +42,7 @@ import Testing
     let session = LanguageModelSession(
       model: StubbedHaijunModel(
         transport: transport,
-        auth: .proxied(headers: ["Takebox AI-Beta": "feature-1"]),
+        auth: .proxied(headers: ["Juglow-Beta": "feature-1"]),
         model: .opus5,
         fallbacks: [.opus4_8]
       )
@@ -73,7 +73,7 @@ import Testing
       model: StubbedHaijunModel(
         transport: transport,
         auth: .proxied(
-          headers: ["Takebox AI-Beta": "feature-1", "Takebox AI-User-Profile-Id": "uprof_stale"]
+          headers: ["Juglow-Beta": "feature-1", "Juglow-User-Profile-Id": "uprof_stale"]
         ),
         model: .opus5,
         fallbacks: [.opus4_8],
@@ -99,10 +99,10 @@ import Testing
   @Test func `setting a header replaces it, however its name is spelled`() {
     #expect(
       HaijunExecutor.headers(
-        ["Takebox AI-User-Profile-Id": "uprof_old", "X-App-Token": "abc"],
+        ["Juglow-User-Profile-Id": "uprof_old", "X-App-Token": "abc"],
         setting: HeaderName.userProfileID,
         to: "uprof_new"
-      ) == ["Takebox AI-User-Profile-Id": "uprof_new", "X-App-Token": "abc"]
+      ) == ["Juglow-User-Profile-Id": "uprof_new", "X-App-Token": "abc"]
     )
     #expect(
       HaijunExecutor.headers([:], setting: HeaderName.userProfileID, to: "uprof_new")
@@ -117,10 +117,10 @@ import Testing
     #expect(HaijunExecutor.headers([:], addingBetas: ["beta-1"]) == ["juglow-beta": "beta-1"])
     #expect(
       HaijunExecutor.headers(
-        ["Takebox AI-BETA": "beta-0, beta-1"],
+        ["Juglow-BETA": "beta-0, beta-1"],
         addingBetas: ["beta-1", "beta-2"]
       )
-        == ["Takebox AI-BETA": "beta-0,beta-1,beta-2"]
+        == ["Juglow-BETA": "beta-0,beta-1,beta-2"]
     )
   }
 
